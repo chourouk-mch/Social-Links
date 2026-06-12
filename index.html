@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chourouk Design & Favors - Links</title>
+    <!-- استدعاء أيقونات Font Awesome للحصول على شكل احترافي -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استدعاء خط Cairo بأوزان مختلفة لجمالية واحترافية النص والاسم */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: #111111; /* خلفية سوداء ملكية فاخرة */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: hidden;
+            position: relative;
+            padding-bottom: 100px;
+        }
+
+        /* الحاوية الرئيسية للروابط */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 24px;
+            text-align: center;
+            z-index: 5;
+        }
+
+        /* حاوية الصورة الدائرية مع الإطار باللون المطلوب #7e5229 */
+        .profile-wrapper {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 24px auto;
+            border-radius: 50%;
+            padding: 4px; 
+            background: #7e5229; 
+            box-shadow: 0 10px 25px rgba(126, 82, 41, 0.25);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: #111;
+            border: 3px solid #111; 
+        }
+
+        /* اسم الحساب باللون المطلوب #7e5229 */
+        h1 {
+            font-size: 1.65rem;
+            color: #7e5229; 
+            margin-bottom: 10px;
+            font-weight: 900; 
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* الوصف الذي تحت الاسم بنفس اللون المطلوب #7e5229 */
+        p {
+            font-size: 1rem;
+            color: rgba(126, 82, 41, 0.95); 
+            margin-bottom: 35px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* حاوية الأزرار */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* تصميم الأزرار المميزة بإطار ذهبي متدرج واحترافي */
+        .link-card {
+            background: #ffffff;
+            color: #4a2f16; /* لون النص متناسق وداكن وواضح جداً للقراءة */
+            display: flex;
+            align-items: center;
+            padding: 18px 26px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            
+            /* سحر الإطار الذهبي المتدرج */
+            position: relative;
+            border: 2px solid transparent;
+            background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #f3d184, #b38f43, #f3d184);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* أيقونات الأزرار */
+        .link-card i {
+            font-size: 1.35rem;
+            margin-left: 15px; 
+            transition: transform 0.3s ease;
+        }
+
+        /* تأثير التمرير والضغط (Hover): الحفاظ على اللون الأساسي (#7e5229) مع توهج الإطار الذهبي */
+        .link-card:hover {
+            background-image: linear-gradient(#7e5229, #7e5229), linear-gradient(135deg, #f3d184, #b38f43, #f3d184);
+            color: #ffffff; /* يتحول النص للأبيض الناصع لوضوح ممتاز وثبات على شاشات الهاتف */
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(243, 209, 132, 0.25);
+        }
+
+        .link-card:hover i {
+            transform: scale(1.15);
+        }
+
+        /* =======================================================
+           تعديل ألوان أنيميشن الأمواج لتتناسق مع الألوان العامة
+           ======================================================= */
+        .waves-section {
+            position: fixed; 
+            bottom: -5px; 
+            left: 0;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .editorial {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        }
+        
+        /* الموجة الأولى */
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+            fill: rgba(126, 82, 41, 0.15);
+        }
+        
+        /* الموجة الثانية */
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+            fill: rgba(126, 82, 41, 0.3);
+        }
+        
+        /* الموجة الثالثة */
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+            fill: rgba(126, 82, 41, 0.5);
+        }
+        
+        /* الموجة الرابعة الأساسية: تندمج بنعومة مع الأسود الملكي */
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+            fill: #301e0e; 
+        }
+
+        @keyframes move-forever {
+            0% {
+                transform: translate3d(-90px, 0, 0);
+            }
+            100% {
+                transform: translate3d(85px, 0, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .waves-section {
+                height: 110px; 
+                bottom: -2px;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- إطار الصورة الدائري باللون المختار #7e5229 -->
+        <div class="profile-wrapper">
+            <img src="avatar.png" alt="Chourouk" class="profile-img" onerror="this.src='https://via.placeholder.com/150/ffffff/7e5229?text=Design'">
+        </div>
+
+        <!-- الاسم باللون المختار #7e5229 -->
+        <h1>Chourouk Design & Favors</h1>
+        
+        <!-- الوصف باللون المختار #7e5229 -->
+        <p>مرحباً بك! يمكنك التواصل معي عبر المنصات التالية</p>
+
+        <!-- الأزرار التفاعلية مع إطار ذهبي متدرج ومذهل -->
+        <div class="links-wrapper">
+            
+            <!-- انستغرام -->
+            <a href="https://www.instagram.com/design_._favors?igsh=Z2dwbGN0amgzMDl2" target="_blank" class="link-card">
+                <i class="fab fa-instagram"></i>
+                <span>تابعنا على انستغرام</span>
+            </a>
+
+            <!-- تيك توك -->
+            <a href="https://tiktok.com/@design_._favors" target="_blank" class="link-card">
+                <i class="fab fa-tiktok"></i>
+                <span>تابعنا على تيك توك</span>
+            </a>
+
+            <!-- فيسبوك -->
+            <a href="#" target="_blank" class="link-card">
+                <i class="fab fa-facebook-f"></i>
+                <span>تابعنا على فيسبوك</span>
+            </a>
+
+            <!-- الموقع الجغرافي -->
+            <a href="https://maps.google.com/?q=Mila+Centre" target="_blank" class="link-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>موقعنا الجغرافي</span>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- قسم الأنيميشن المموج الاحترافي في الأسفل -->
+    <div class="waves-section">
+        <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" />
+                <use xlink:href="#gentle-wave" x="48" y="3" />
+                <use xlink:href="#gentle-wave" x="48" y="5" />
+                <use xlink:href="#gentle-wave" x="48" y="7" />
+            </g>
+        </svg>
+    </div>
+
+</body>
+</html>
